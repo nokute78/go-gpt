@@ -1,4 +1,7 @@
 # go-gpt
+![Go](https://github.com/nokute78/go-gpt/workflows/Go/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/nokute78/go-gpt)](https://goreportcard.com/report/github.com/nokute78/go-gpt)
+[![Go Reference](https://pkg.go.dev/badge/github.com/nokute78/go-gpt.svg)](https://pkg.go.dev/github.com/nokute78/go-gpt)
 
 ## Installation
 
