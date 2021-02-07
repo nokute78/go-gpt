@@ -22,13 +22,13 @@ import (
 	"testing"
 )
 
-func TestJsonEntryName(t *testing.T) {
+func TestREntryName(t *testing.T) {
 	e, err := ReadEntryData(t, "esp_entry.bin")
 	if err != nil {
 		t.Fatalf("ReadEntryData err:%s", err)
 	}
 
-	j := gpt.NewJsonEntry(*e)
+	j := gpt.NewREntry(*e)
 	if !strings.Contains(j.Name, "EFI System") {
 		t.Errorf("j.Name mismatch\n given :%s expect:%s", j.Name, "EFI System")
 	}

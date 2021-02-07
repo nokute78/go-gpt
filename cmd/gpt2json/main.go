@@ -62,7 +62,7 @@ func (cli *CLI) Run(args []string) (ret int) {
 		return ExitArgError
 	}
 
-	gpts := []gpt.JsonGpt{}
+	gpts := []gpt.RGpt{}
 
 	for _, v := range cnf.devices {
 		f, err := os.Open(v)
@@ -76,7 +76,7 @@ func (cli *CLI) Run(args []string) (ret int) {
 			fmt.Fprintf(cli.ErrStream, "ReadGpt err:%s\n", err)
 			continue
 		}
-		jg := gpt.NewJsonGpt(*g)
+		jg := gpt.NewRGpt(*g)
 		gpts = append(gpts, *jg)
 	}
 
