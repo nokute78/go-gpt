@@ -46,6 +46,18 @@ func TestReadHeader(t *testing.T) {
 	}
 }
 
+func TestReadInvalidHeader(t *testing.T) {
+	f, err := os.Open(filepath.Join(testdir, "esp_entry.bin"))
+	if err != nil {
+		t.Fatalf("os.Open err:%s", err)
+	}
+	defer f.Close()
+	_, err = gpt.ReadHeader(f)
+	if err == nil {
+		t.Errorf("Invalid Header")
+	}
+}
+
 func TestHeaderIsValid(t *testing.T) {
 	h, err := ReadHeaderData(t)
 	if err != nil {

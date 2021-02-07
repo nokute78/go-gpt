@@ -60,6 +60,10 @@ func ReadHeader(r io.Reader) (*Header, error) {
 	if err != nil {
 		return nil, fmt.Errorf("ReadHeader:%w", err)
 	}
+	if !h.IsValid() {
+		return nil, fmt.Errorf("Not GPT")
+	}
+
 	return h, nil
 }
 
